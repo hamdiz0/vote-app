@@ -1,6 +1,6 @@
 def gs 
 
-pipline{
+pipeline{
     agent any
     stages{
         stage("load-script"){
