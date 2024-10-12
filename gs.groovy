@@ -8,9 +8,9 @@ def build(String imageName ,String ver ,String credId ,String dockerfilelocation
         )
     ]){
         sh "docker build $dockerfilelocation -t $imageName:$ver"
+        echo "$credId"
         sh 'echo PASSWORD | docker login -u USER --password-stdin'
         sh "docker push $imageName:$ver"
-        echo "$credId"
     }
 }
 return this
