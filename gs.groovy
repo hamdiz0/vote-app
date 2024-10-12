@@ -1,5 +1,5 @@
 
-def build(String imageName ,String ver ,String credId){
+def build(String imageName ,String ver ,String credId ,String dockerfilelocation){
     withCredentials([
         usernamePassword(
             credentialsId: credId,
@@ -7,7 +7,7 @@ def build(String imageName ,String ver ,String credId){
             passwordVariable: "PASSWORD"
         )
     ]){
-        sh "docker build . -t $imageName:$ver"
+        sh "docker build $dockerfilelocation -t $imageName:$ver"
         sh 'echo PASSWORD | docker login -u USER --password-stdin'
         sh "docker push $imageName:$ver"
     }
