@@ -1,0 +1,27 @@
+def gs 
+
+pipline{
+    agent any
+    stages{
+        stage("load-script"){
+            script{
+                gs = load "gs.groovy"
+            }
+        }
+        stage("build-vote-image"){
+            script{
+                gs.build('hamdiz0/va-vote','1.0','docker-repo')
+            }
+        }
+        stage("build-result-image"){
+            script{
+                gs.build('hamdiz0/va-result','1.0','docker-repo')
+            }
+        }
+        stage("build-worker-image"){
+            script{
+                gs.build('hamdiz0/va-worker','1.0','docker-repo')
+            }
+        }
+    }
+}
