@@ -2,7 +2,7 @@
 def build(String imageName ,String ver ,String credId ,String dockerfilelocation){
     withCredentials([
         usernamePassword(
-            credentialsId: credId,
+            credentialsId: "$credId",
             usernameVariable: "USER",
             passwordVariable: "PASSWORD"
         )
