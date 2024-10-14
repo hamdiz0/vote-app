@@ -1,4 +1,4 @@
-# vote-app
+# Vote-App
 
 <a href="https://github.com/dockersamples/example-voting-app">based on example-voting-app</a>
 
@@ -11,10 +11,16 @@
   - worker (.Net)
   - redis 
   - postgres
-## Running the app :
-  - docker compose up --build
-## Pushing vote ,result & worker to docker hub using jenkins :
+
+## Pushing vote ,result & worker to docker hub using jenkins 
+
   - hamdiz0/va-vote:latest
   - hamdiz0/va-result:latest
   - hamdiz0/va-worker:latest
+
+## Running the app 
+
+  - docker compose up --build
+    
+
   
