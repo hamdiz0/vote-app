@@ -12,13 +12,13 @@
   - redis 
   - postgres
 
-## Pushing vote ,result & worker to docker hub using jenkins 
+## Pushing vote ,result & worker to docker hub using jenkins :
 
   - hamdiz0/va-vote:latest
   - hamdiz0/va-result:latest
   - hamdiz0/va-worker:latest
 
-## Running the app 
+## Running the app :
 
   - docker compose up --build
     
