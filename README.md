@@ -2,7 +2,7 @@
 
 <a href="https://github.com/dockersamples/example-voting-app">based on example-voting-app</a>
 
-## A containerized voting app split into 5 containers :
+## A containerized vote app split into 5 containers :
 
 <img src="./voting-app.PNG" style="width:100%">
 
