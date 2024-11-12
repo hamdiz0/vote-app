@@ -1,4 +1,4 @@
-def gs 
+def gs    // define a variable for the external groovy script (gs.groovy)
 
 pipeline{
     agent any
@@ -13,7 +13,7 @@ pipeline{
         stage("build-vote-image"){
             steps{
                 script{
-                    gs.build('hamdiz0/va-vote','2.0','docker-repo','./vote')
+                    gs.build('hamdiz0/va-vote','2.0','docker-repo','./vote')    // calling the build function from the external script
                 }
             }
         }
