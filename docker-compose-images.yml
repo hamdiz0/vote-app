@@ -1,12 +1,12 @@
 services:
 
   vote:
-    image: hamdiz0/va-vote:2.0
+    image: hamdiz0/va-vote:1.0
     ports:
       - "8000:80"
 
   result:
-    image: hamdiz0/va-result:2.0
+    image: hamdiz0/va-result:1.0
     ports:
       - "8001:80"
 
@@ -22,7 +22,7 @@ services:
       - "db-data:/var/lib/postgresql/data" # create a volume to store data locally
 
   worker:
-    image: hamdiz0/va-worker:2.0
+    image: hamdiz0/va-worker:1.0
 
 volumes:
   db-data: # persist postgres data locally

@@ -12,11 +12,14 @@
   - redis 
   - postgres
 
-## Pushing vote ,result & worker to docker hub using jenkins :
+## Pushing vote ,result & worker to docker hub using Jenkins :
 
-  - hamdiz0/va-vote:latest
-  - hamdiz0/va-result:latest
-  - hamdiz0/va-worker:latest
+* utilized a function template to build and push the images 
+* take a look at the <a href="./gs.groovy">function</a> along with the <a href="./jenkinsfile">Jenkins file</a>
+* check out the images :
+  - hamdiz0/va-vote:1.0
+  - hamdiz0/va-result:1.0
+  - hamdiz0/va-worker:1.0
 
 ## Running the app :
 
