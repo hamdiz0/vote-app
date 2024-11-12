@@ -1,0 +1,29 @@
+services:
+
+  vote:
+    image: hamdiz0/va-vote:2.0
+    ports:
+      - "8000:80"
+
+  result:
+    image: hamdiz0/va-result:2.0
+    ports:
+      - "8001:80"
+
+  redis:
+    image: redis:alpine
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - "db-data:/var/lib/postgresql/data" # create a volume to store data locally
+
+  worker:
+    image: hamdiz0/va-worker:2.0
+
+volumes:
+  db-data: # persist postgres data locally
+  

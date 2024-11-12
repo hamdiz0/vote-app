@@ -21,6 +21,6 @@
 ## Running the app :
 
   - docker compose up --build
-    
+  - docker compose up -f ./docker-compose-images.yml up
 
   
