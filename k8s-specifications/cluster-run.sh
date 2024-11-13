@@ -18,7 +18,7 @@ for file in "$DIR"/*.y*ml; do
 done
 
 echo "starting pods ..."
-sleep 15
+sleep 25
 
 echo -e "\nkubectl get all :\n"
 minikube kubectl -- get all
@@ -26,4 +26,6 @@ echo -e "\nvote-url:\n"
 minikube service -- vote-svc --url
 echo -e "\nresult-url:\n"
 minikube service -- result-svc --url
+
+echo "Note : if the app doesen't start wait for the pods to be ready"
 
