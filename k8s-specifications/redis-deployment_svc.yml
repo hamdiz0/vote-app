@@ -1,0 +1,45 @@
+---
+# redis-deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis-deployment
+  labels:
+    name: redis-deployment
+    app: vote-app
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: redis-pod
+      app: vote-app
+  template:
+    metadata:
+      labels:
+        name: redis-pod
+        app: vote-app
+    spec:
+      containers:
+        - name : redis
+          image: redis:alpine
+          ports :
+          - containerPort: 6379
+
+---
+# redis-service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+
+spec:
+  selector:
+    name: redis-pod
+    app: vote-app
+  type: ClusterIP
+  ports:
+    - port: 6379
+      targetPort: 6379

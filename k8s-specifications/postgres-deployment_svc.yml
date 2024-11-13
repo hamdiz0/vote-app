@@ -1,0 +1,50 @@
+---
+# postgres-deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgres-deployment
+  labels:
+    name: postgres-deployment
+    app: vote-app
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: postgres-pod
+      app: vote-app
+  template:
+    metadata:
+      labels:
+        name: postgres-pod
+        app: vote-app
+    spec:
+      containers:
+        - name: postgres
+          image: postgres:15-alpine
+          ports:
+          - containerPort: 5432
+          env:
+            - name: POSTGRES_USER
+              value: "postgres"
+            - name : POSTGRES_PASSWORD
+              value: "postgres"
+
+---
+# postgres-service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: db
+
+spec:
+  selector:
+    name: postgres-pod
+    app: vote-app
+  type: ClusterIP
+  ports:
+    - port: 5432
+      targetPort: 5432

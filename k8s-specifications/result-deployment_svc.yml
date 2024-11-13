@@ -1,0 +1,46 @@
+---
+# result-deployment
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: result-deployment
+  labels:
+    name: result-deployment
+    app: vote-app
+
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: result-pod
+      app: vote-app
+  template:
+    metadata:
+      labels:
+        name: result-pod
+        app: vote-app
+    spec:
+      containers:
+        - name : vote
+          image: hamdiz0/va-result:1.0
+          ports :
+          - containerPort: 80
+
+---
+# result-service
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: result-svc
+
+spec:
+  selector:
+    name: result-pod
+    app: vote-app
+  type: NodePort
+  ports:
+    - port: 80
+      targetPort: 80
+      nodePort: 30001
