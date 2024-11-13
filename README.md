@@ -6,7 +6,7 @@
 * This porject also includes a Kubernetes setup for running the app in a 
 Minikube cluster
 
-<img src="./voting-app.PNG" style="width:100%">
+<img src="./imgs/voting-app.PNG" style="width:100%">
 
 ### Prerequisites:
 
@@ -44,7 +44,7 @@ Minikube cluster
 
 * added kubernetes configuration files to deploy the app as a cluster on Minikube
 
-<img src="./cluster.PNG" style="width:100%">
+<img src="./imgs/cluster.PNG" style="width:100%">
 
 ### YAML files templates :
 
