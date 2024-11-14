@@ -17,8 +17,9 @@ for file in "$DIR"/*.y*ml; do
     fi
 done
 
-echo "starting pods ..."
-sleep 25
+echo -e "\nstarting pods ...\n"
+
+minikube kubectl -- rollout status all
 
 echo -e "\nkubectl get all :\n"
 minikube kubectl -- get all
