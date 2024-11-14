@@ -13,21 +13,21 @@ pipeline{
         stage("build-vote-image"){
             steps{
                 script{
-                    gs.build('hamdiz0/va-vote','1.0','docker-repo','./vote')    // calling the build function from the external script
+                    gs.build('hamdiz0/va-vote','2.0','docker-repo','./vote')    // calling the build function from the external script
                 }
             }
         }
         stage("build-result-image"){
             steps{
                 script{
-                    gs.build('hamdiz0/va-result','1.0','docker-repo','./result')
+                    gs.build('hamdiz0/va-result','2.0','docker-repo','./result')
                 }
             }
         }
         stage("build-worker-image"){
             steps{
                 script{
-                    gs.build('hamdiz0/va-worker','1.0','docker-repo','./worker')
+                    gs.build('hamdiz0/va-worker','2.0','docker-repo','./worker')
                 }
             }
         }

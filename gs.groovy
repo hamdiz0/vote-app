@@ -1,4 +1,5 @@
 
+// build(DockerHub Profile/imageName , version , credentialId from jenkins , Dockerfile path)
 def build(String imageName ,String ver ,String credId ,String dockerfilelocation){
     withCredentials([
         usernamePassword(
