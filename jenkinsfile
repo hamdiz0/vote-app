@@ -35,11 +35,9 @@ pipeline{
         */
         stage("deploy app"){
             steps{
-                script{
-                    sshagent(credentials:['local-k8s']){
-                        sh 'ssh -o StrictHostKeyChecking=no vagrant@192.168.1.22'
-                        sh 'ls -l'
-                    }
+                sshagent(credentials:['local-k8s']){
+                    /*sh 'ssh -o StrictHostKeyChecking=no vagrant@192.168.1.22'*/
+                    sh 'ls -l'
                 }
             }
         }
