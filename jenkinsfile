@@ -34,11 +34,14 @@ pipeline{
         }
         */
         stage("deploy app"){
-            steps{
-                sshagent(credentials:['local-k8s']){
-                    sh 'ssh -o StrictHostKeyChecking=no -l vagrant 192.168.1.22 uname -a'
-                    sh 'ls -l'
-                }
+            withCredentials([
+                usernamePassword(
+                    credentialsId: "vagrant-k8s",
+                    usernameVariable: "USER",
+                    passwordVariable: "PASSWORD"
+                )
+            ]){
+                sh "sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USER@192.168.1.22 'ls -l'"
             }
         }
     }
