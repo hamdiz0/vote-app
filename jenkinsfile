@@ -47,7 +47,7 @@ pipeline{
                         'minikube-instance',                                // credentail Id in jenkins
                         env.REPOSITRY ,                                     // git repositry
                         'vote-app/k8s-specifications/',                     // Repo_Name/Path/
-                        'k8s-cluster-run.sh'                                // Deployment_Script_Name
+                        'minikube-run.sh'                                // Deployment_Script_Name
                     )
                 }
             }
