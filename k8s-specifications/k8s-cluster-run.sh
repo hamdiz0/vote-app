@@ -17,8 +17,7 @@ echo "applying k8s yaml files"
 for file in "$DIR"/*.y*ml; do
     if [ -f "$file" ]; then
         echo "applying $file ..."
-        # swap the <<VERSION>> in the YAML files with the passed version VER
-        sed -i "s/<<VERSION>>/${VER}/" "$file" 
+        sed -i "s/<<VERSION>>/${VER}/" "$file" # swap the <<VERSION>> in the YAML files with the passed version VER
         kubectl apply -f "$file"
     else
         echo "no yaml files in : $DIR"

@@ -22,8 +22,8 @@ def deploy(String remote_user ,String remote_ip ,String version ,String credId ,
                 rm -rf jenkins # remove old repofiles
                 mkdir jenkins ; cd jenkins ; git clone $repo # clone repo in jenkins folder
                 cd $script_path
-                sudo chmod +x $script_name # add execute permissions
-                sh $script_name -v $version# run script
+                sudo chmod +x $script_name  # add execute permissions
+                sh $script_name -v $version # run script
         """
     }
 }
