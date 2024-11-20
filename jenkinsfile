@@ -2,6 +2,12 @@ def gs    // define a variable for the external groovy script (gs.groovy)
 
 pipeline{
     agent any
+
+    environment {
+        VERSION = "2.0" 
+        REPOSITRY = "https://github.com/hamdiz0/vote-app.git"
+    }
+
     stages{
         stage("load-script"){
             steps{
@@ -35,14 +41,14 @@ pipeline{
         */
         stage("deploy app"){
             steps{
-                sshagent(credentials:['local-k8s']){
-                    sh 'ssh -o StrictHostKeyChecking=no vagrant@192.168.1.22 -a'
-                    sh 'rm -rf git'
-                    sh 'mkdir git ; cd git'
-                    sh 'git clone https://github.com/hamdiz0/vote-app.git'
-                    sh 'cd vote-app/k8s-specifications'
-                    sh 'sudo sh k8s-cluster-run.sh'
-                }
+                gs.deploy(
+                    'vagrant',                                          // remote user name
+                    '192.168.1.22',                                     // Ip address of the remote machine
+                    env.VERSION ,                                       // version
+                    'local-k8s',                                        // credentail Id in jenkins
+                    env.REPOSITRY ,                                     // git repositry
+                    'vote-app/k8s-specifications/k8s-cluster-run.sh'    // Repo_Name/Path/Deployment_Script
+                )
             }
         }
     }

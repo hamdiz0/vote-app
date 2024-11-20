@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
         - name : vote
-          image: hamdiz0/va-result:1.0
+          image: hamdiz0/va-result:<<VERSION>> # the script passes the version automaticly throught this variable
           ports :
           - containerPort: 80
 
