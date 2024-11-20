@@ -37,7 +37,11 @@ pipeline{
             steps{
                 sshagent(credentials:['local-k8s']){
                     sh 'ssh -o StrictHostKeyChecking=no vagrant@192.168.1.22 -a'
-                    sh 'ls -l'
+                    sh 'rm -rf git'
+                    sh 'mkdir git ; cd git'
+                    sh 'git clone https://github.com/hamdiz0/vote-app.git'
+                    sh 'cd vote-app/k8s-specifications'
+                    sh 'sudo sh k8s-cluster-run.sh'
                 }
             }
         }
