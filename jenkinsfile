@@ -16,7 +16,6 @@ pipeline{
                 }
             }
         }
-        /* 
         stage("build-vote-image"){
             steps{
                 script{
@@ -38,15 +37,14 @@ pipeline{
                 }
             }
         }
-        */
         stage("deploy app"){
             steps{
                 script {
                     gs.deploy(
-                        'vagrant',                                          // remote user name
-                        '192.168.1.22',                                     // Ip address of the remote machine
+                        'ubuntu',                                           // remote user name
+                        '35.181.167.44',                                    // Ip address of the remote machine
                         env.VERSION ,                                       // version
-                        'local-k8s',                                        // credentail Id in jenkins
+                        'minikube-instance',                                // credentail Id in jenkins
                         env.REPOSITRY ,                                     // git repositry
                         'vote-app/k8s-specifications/',                     // Repo_Name/Path/
                         'k8s-cluster-run.sh'                                // Deployment_Script_Name

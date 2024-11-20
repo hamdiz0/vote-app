@@ -3,13 +3,21 @@
 echo "deleteing the old objects"
 minikube kubectl -- delete all --all
 
-DIR=${1:-.}
+# accept version with -v 
+while getopts "v:" opt; do
+  case $opt in
+    v) VER=$OPTARG;;
+  esac
+done
+
+DIR=. # set the directory to the default
 
 echo "applying k8s yaml files"
 
 for file in "$DIR"/*.y*ml; do
     if [ -f "$file" ]; then
         echo "applying $file ..."
+        sed -i "s/<<VERSION>>/${VER}/" "$file" # swap the <<VERSION>> in the YAML files with the passed version VER
         minikube kubectl -- apply -f "$file"
     else
         echo "no yaml files in : $DIR"
