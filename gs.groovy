@@ -16,6 +16,7 @@ def build(String imageName ,String version ,String credId ,String dockerfileloca
 // build(remote user name , remote Ip@ , credentialId from jenkins , github repo url , full script path : Repo-name/Path-to-scrip , Script-name )
 def deploy(String remote_user ,String remote_ip ,String version ,String credId ,String repo ,String script_path , String script_name){
     sshagent(credentials:["$credId"]){
+        echo "$version"
         sh """
             ssh -o StrictHostKeyChecking=no $remote_user@$remote_ip <<EOF
                 rm -rf jenkins # remove old repofiles
