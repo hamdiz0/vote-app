@@ -23,5 +23,4 @@ spec:
     spec:
       containers:
         - name : worker
-          # the script passes the version automaticly throught this variable
           image: hamdiz0/va-worker:<<VERSION>> 
