@@ -36,8 +36,10 @@ minikube service -- vote-svc --url
 echo -e "\nresult-url:\n"
 minikube service -- result-svc --url
 
-# forward ports to the host machine
 
+# terminate old forwarding process to avoid conflicts
+kill $(ps aux | grep 'kubectl port-forward' | awk '{print $2}')
+# forward ports to the host machine
 kubectl port-forward svc/vote-svc 30000:80 --address 0.0.0.0 &
 kubectl port-forward svc/result-svc 30001:80 --address 0.0.0.0 &
 
