@@ -1,8 +1,5 @@
 #!/bin/bash
 
-echo "deleteing the old objects"
-minikube kubectl -- delete all --all
-
 # accept version with -v 
 while getopts "v:" opt; do
   case $opt in

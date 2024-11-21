@@ -7,9 +7,6 @@ while getopts "v:" opt; do
   esac
 done
 
-echo "deleting the old objects"
-kubectl delete all --all
-
 DIR=. # set the directory to the default
 
 echo "applying k8s yaml files"
