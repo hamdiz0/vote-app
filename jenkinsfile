@@ -42,12 +42,12 @@ pipeline{
                 script {
                     gs.deploy(
                         'ubuntu',                                           // remote user name
-                        '35.181.167.44',                                    // Ip address of the remote machine
+                        '51.44.12.190',                                     // Ip address of the remote machine
                         env.VERSION ,                                       // version
                         'minikube-instance',                                // credentail Id in jenkins
                         env.REPOSITRY ,                                     // git repositry
                         'vote-app/k8s-specifications/',                     // Repo_Name/Path/
-                        'minikube-run.sh'                                // Deployment_Script_Name
+                        'minikube-run.sh'                                   // Deployment_Script_Name
                     )
                 }
             }
