@@ -1,4 +1,5 @@
 
+// build & push function
 // build(DockerHub Profile/imageName , version , credentialId from jenkins , Dockerfile path)
 def build(String imageName ,String version ,String credId ,String dockerfilelocation){
     withCredentials([
@@ -11,8 +12,11 @@ def build(String imageName ,String version ,String credId ,String dockerfileloca
         sh "docker build $dockerfilelocation -t $imageName:$version"
         sh "echo $PASSWORD | docker login -u $USER --password-stdin"
         sh "docker push $imageName:$version"
+        sh "docker push $imageName:latest"
     }
 }
+
+// deployment function
 // build(remote user name , remote Ip@ , credentialId from jenkins , github repo url , full script path : Repo-name/Path-to-scrip , Script-name )
 def deploy(String remote_user ,String remote_ip ,String version ,String credId ,String repo ,String script_path , String script_name){
     sshagent(credentials:["$credId"]){
