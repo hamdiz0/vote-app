@@ -3,17 +3,17 @@
 <a href="https://github.com/dockersamples/example-voting-app">Based on example-voting-app</a>
 
 - [Prerequisites](#prerequisites)
-- [CI/CD Pipeline](#cicd-pipeline)
-  - [CI Pipeline](#ci-pipeline)
-    - [Testing the app using `docker-compose`](#testing-the-app-using-docker-compose)
-    - [Pushing docker images](#pushing-docker-images)
-    - [Webhooks](#webhooks)
-  - [CD Pipeline](#cd-pipeline)
-    - [YAML files templates](#yaml-files-templates)
-    - [Setting up minikube](#setting-up-minikube)
+- [CI/CD Pipeline](#cicd-pipeline-)
+  - [CI Pipeline](#ci-pipeline-)
+    - [Testing the app using `docker-compose`](#testing-the-app-using-docker-compose-)
+    - [Pushing docker images](#pushing-docker-images-)
+    - [Webhooks](#webhooks-)
+  - [CD Pipeline](#cd-pipeline-)
+    - [YAML files templates](#yaml-files-templates-)
+    - [Setting up minikube](#setting-up-minikube--)
     - [Deploying the cluster manually](#deploying-the-cluster-manually-)
-    - [Using an SSH-agent to deploy the cluster](#using-an-ssh-agent-to-deploy-the-cluster)
-  - [Results](#results)
+    - [Using an SSH-agent to deploy the cluster](#using-an-ssh-agent-to-deploy-the-cluster-)
+  - [Results](#results-)
 
 
 * This app is structured into five services, each running in separate containers, and it allows users to cast votes and see results in real-time.
