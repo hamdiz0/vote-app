@@ -1,5 +1,7 @@
 #!/bin/bash
 
+VER="latest" #default the version to latest
+
 # accept version with -v 
 while getopts "v:" opt; do
   case $opt in

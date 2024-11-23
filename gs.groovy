@@ -1,4 +1,3 @@
-
 // build & push function
 // build(DockerHub Profile/imageName , version , credentialId from jenkins , Dockerfile path)
 def build(String imageName ,String version ,String credId ,String dockerfilelocation){
@@ -10,6 +9,7 @@ def build(String imageName ,String version ,String credId ,String dockerfileloca
         )
     ]){
         sh "docker build $dockerfilelocation -t $imageName:$version"
+        sh "docker build $dockerfilelocation -t $imageName:latest"
         sh "echo $PASSWORD | docker login -u $USER --password-stdin"
         sh "docker push $imageName:$version"
         sh "docker push $imageName:latest"
