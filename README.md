@@ -142,7 +142,7 @@
     - the function clones the repository and runs the deployment script in the minikube machine
     - than it passes the version to the deployment script as it accept a version option `-v`
   * deployment script :
-    - <a href="./gs.groovy">view the deployment script here</a>
+    - <a href="./k8s-specifications/minikube-run.sh">view the deployment script here</a>
     - the deployment script changes the docker image version in the YAML files than applies them all using a `for` loop
     - the YAML file cantains the docker images along with a place-holder `<<VERSION>>` the script changes this to the passed in version
       ```
