@@ -62,10 +62,14 @@
 ### Webhooks :
 
 * configured a webhook between jenkins and github to trigger the builds automaticly 
-  - in the github repo settings there is an option to add webhook triggers
-  <img src="./imgs/webhook.PNG" style="width:100%">
-  - make sure to configure jenkins to handle job triggers within a pipline 
-  <img src="./imgs/jen-hook.PNG" style="width:100%">
+  - in the github repo settings there is an option to add webhook trigger
+  
+    <img src="./imgs/webhook.PNG" style="width:100%">
+    
+  - make sure to configure jenkins to handle job triggers within a pipline
+  
+    <img src="./imgs/jen-hook.PNG" style="width:100%">
+    
 * more details about web hooks <a href="https://github.com/hamdiz0/LearningDevOps/blob/main/jenkins/jenkins.md#job-triggers">here</a>
 
 ## CD Pipeline :
