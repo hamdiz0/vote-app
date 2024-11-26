@@ -94,7 +94,7 @@
 
 ### Deploying the cluster manually :
 
-  * you can run the script : <a href="./k8s-specifications/minkube-run.sh">minikube-run.sh</a>
+  * you can run the script : <a href="./k8s-specifications/minikube-run.sh">minikube-run.sh</a>
   * alternativly you can use this script : <a href="./k8s-specifications/k8s-cluster-run.sh">cluster-run.sh</a> to run it on a kubeadm setup
     - here is guide to how to setup a k8s cluster with vagrant and kubeadm <a href="https://github.com/vancanhuit/vagrant-k8s">vagrant-k8s</a>
   * make sure execute permissions are added and pass in the version "-v" (1.0 , 2.0 , latest) :
