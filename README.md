@@ -74,9 +74,7 @@
 
 ## CD Pipeline :
 
-* added kubernetes configuration files to deploy the app as a cluster on Minikube hosted on an EC2 instance
-
-<img src="./imgs/cluster.PNG" style="width:100%">
+* added kubernetes configuration files to deploy the app on Minikube hosted on an EC2 instance
 
 ### YAML files templates :
 
@@ -92,7 +90,7 @@
 
 ### Setting up minikube  :
 
-  * follow instructions here <a href="https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download"></a>
+  * follow instructions <a href="https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download">here</a>
 
 ### Deploying the cluster manually :
 
