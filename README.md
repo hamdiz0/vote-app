@@ -76,6 +76,8 @@
 
 * added kubernetes configuration files to deploy the app on Minikube hosted on an EC2 instance
 
+<img src="./imgs/k8s-comps.PNG" style="width:100%">
+
 ### YAML files templates :
 
 * utilized deployments for each service 
