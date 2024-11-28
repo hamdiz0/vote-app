@@ -37,11 +37,11 @@ kubectl get all
 kill $(ps aux | grep 'kubectl port-forward' | awk '{print $2}')
 
 # port forwarding to access the service 
-minikube kubectl -- port-forward svc/vote-svc 30000:80 --address 0.0.0.0 &  # & to run in the background
+kubectl  port-forward svc/vote-svc 30000:80 --address 0.0.0.0 &  # & to run in the background
 # get port forwarding proccess id
 VOTE_PID=$!
 
-minikube kubectl -- port-forward svc/result-svc 30001:80 --address 0.0.0.0 &
+kubectl  port-forward svc/result-svc 30001:80 --address 0.0.0.0 &
 # get port forwarding proccess id
 RESULT_PID=$!
 
