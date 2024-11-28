@@ -163,13 +163,13 @@
       ```
     - the script than forwards both the vote and result services ports so we can access them using the public ip of the EC2 instance :
       ```
-      minikube kubectl -- port-forward svc/vote-svc 30000:80 --address 0.0.0.0 > /dev/null 2>&1 &
-      minikube kubectl -- port-forward svc/result-svc 30001:80 --address 0.0.0.0 > /dev/null 2>&1 &
+      minikube kubectl -- port-forward svc/vote-svc 30000:80 --address 0.0.0.0 &
+      minikube kubectl -- port-forward svc/result-svc 30001:80 --address 0.0.0.0 &
       ```
       * these commands will keep the script in an continious execution mode wish causes the jenkins job to never end 
       * the forwarding processes must be seperated from the script by capturing their PIDs and disowning from the script :
         ```
-        minikube kubectl -- port-forward svc/vote-svc 30000:80 --address 0.0.0.0 > /dev/null 2>&1 &
+        minikube kubectl -- port-forward svc/vote-svc 30000:80 --address 0.0.0.0 &
         VOTE_PID=$!  # get port forwarding proccess id
         disown $VOTE_PID # seperate the process from the script
         ```
