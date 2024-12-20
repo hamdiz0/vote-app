@@ -1,6 +1,6 @@
 # Vote-App
 
-<a href="https://github.com/dockersamples/example-voting-app">Based on example-voting-app</a>
+Based on <a href="https://github.com/dockersamples/example-voting-app">example-voting-app</a>
 
 - [Prerequisites](#prerequisites)
 - [CI/CD Pipeline](#cicd-pipeline-)
@@ -16,7 +16,7 @@
   - [Results](#results-)
 
 
-* This app is structured into five services, each running in separate containers, and it allows users to cast votes and see results in real-time.
+* This app is structured into five services, each running in separate containers, it allows users to cast votes and see results in real-time.
 * This porject also includes a Kubernetes setup for running the app in a Minikube cluster
 * It also includes job triggers and automated deployment with ssh and scripts
 
