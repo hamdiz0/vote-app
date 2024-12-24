@@ -2,10 +2,11 @@
 
 Based on <a href="https://github.com/dockersamples/example-voting-app">example-voting-app</a>
 
-- [Prerequisites](#prerequisites)
+- [Prerequisites](#prerequisites-)
+- [Architecture/Containers](#architecturecontainers-)
+- [Testing the app using `docker-compose`](#testing-the-app-using-docker-compose-)
 - [CI/CD Pipeline](#cicd-pipeline-)
   - [CI Pipeline](#ci-pipeline-)
-    - [Testing the app using `docker-compose`](#testing-the-app-using-docker-compose-)
     - [Pushing docker images](#pushing-docker-images-)
     - [Webhooks](#webhooks-)
   - [CD Pipeline](#cd-pipeline-)
@@ -22,7 +23,7 @@ Based on <a href="https://github.com/dockersamples/example-voting-app">example-v
 
 <img src="./imgs/voting-app.PNG" style="width:100%">
 
-### Prerequisites:
+### Prerequisites :
 
 * Docker
 * Docker Compose (for testing)
@@ -36,18 +37,18 @@ Based on <a href="https://github.com/dockersamples/example-voting-app">example-v
 * Worker Service - .NET service (processes votes)
 * db service - PostgreSQL (store votes)
 
-# CI/CD Pipeline :
-
-<img src="./imgs/cicd.PNG" style="width:100%">
-
-## CI Pipeline :
-
 ### Testing the app using `docker-compose` :
 
 * using the Docker files <a href="./docker-compose.yml">view file here</a> :
   - docker compose up --build
 * using the docker images from DockerHub <a href="./docker-compose-images.yml">view file here</a> :
   - docker compose up -f ./docker-compose-images.yml up
+
+# CI/CD Pipeline :
+
+<img src="./imgs/cicd.PNG" style="width:100%">
+
+## CI Pipeline :
 
 ### Pushing docker images :
 
@@ -70,7 +71,7 @@ Based on <a href="https://github.com/dockersamples/example-voting-app">example-v
   
     <img src="./imgs/jen-hook.PNG" style="width:100%">
     
-* more details about web hooks <a href="https://github.com/hamdiz0/LearningDevOps/blob/main/jenkins/jenkins.md#job-triggers">here</a>
+* more details about web hooks <a href="https://github.com/hamdiz0/LearningDevOps/blob/main/jenkins/README.md#job-triggers">here</a>
 
 ## CD Pipeline :
 
@@ -93,6 +94,7 @@ Based on <a href="https://github.com/dockersamples/example-voting-app">example-v
 ### Setting up minikube  :
 
   * follow instructions <a href="https://minikube.sigs.k8s.io/docs/start/?arch=%2Fwindows%2Fx86-64%2Fstable%2F.exe+download">here</a>
+  * check out this repo for minikube quick setup <a href="https://github.com/hamdiz0/minikube-setup">hamdiz0/minikube-setup</a>
 
 ### Deploying the cluster manually :
 
